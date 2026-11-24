@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 import {
   ArrowUpRight,
@@ -9,8 +8,9 @@ import {
   Heart,
   MessageCircle,
 } from "lucide-react";
-import { SlSocialLinkedin, SlSocialInstagram, SlSocialFacebook } from "react-icons/sl";
+import { SlSocialLinkedin, SlSocialInstagram } from "react-icons/sl";
 import Image from "next/image";
+import { cacheLife } from "next/cache";
 
 const services = [
   { name: "Web Development", href: "/services/web-development" },
@@ -46,16 +46,14 @@ const socials = [
   // },
 ];
 
-export default function Footer() {
+export default async  function Footer() {
+  const year = await getCurrentYear();
   return (
     <footer className="bg-neutral-950 text-white">
-
       {/* MAIN FOOTER */}
       <div className="mx-auto max-w-7xl px-5 pb-14 pt-20 lg:px-8 lg:pt-24">
-
         {/* CTA BANNER */}
         <div className="mb-20 flex flex-col justify-between gap-8 border-b border-white/10 pb-16 md:flex-row md:items-end">
-
           <div className="max-w-2xl">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary-400">
               Have a project in mind?
@@ -64,9 +62,7 @@ export default function Footer() {
             <h2 className="mt-5 text-4xl font-semibold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               Let&apos;s build something
               <br />
-              <span className="text-neutral-500">
-                extraordinary together.
-              </span>
+              <span className="text-neutral-500">extraordinary together.</span>
             </h2>
           </div>
 
@@ -84,20 +80,18 @@ export default function Footer() {
 
         {/* FOOTER GRID */}
         <div className="grid gap-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr] lg:gap-10">
-
           {/* BRAND */}
           <div>
             <Link href="/" className="inline-flex items-center gap-3">
-             <Image src="/logo.png" alt="Dev Center" width={40} height={40} />
+              <Image src="/logo.png" alt="Dev Center" width={40} height={40} />
               <span className="text-2xl font-bold tracking-tight">
                 Dev Center<span className="text-primary-400">.</span>
               </span>
             </Link>
 
             <p className="mt-7 max-w-xs text-sm leading-7 text-neutral-400">
-              We build meaningful digital experiences through
-              software development, modern technology and intelligent
-              solutions.
+              We build meaningful digital experiences through software
+              development, modern technology and intelligent solutions.
             </p>
 
             <div className="mt-7 flex items-center gap-2 text-sm text-neutral-400">
@@ -128,9 +122,7 @@ export default function Footer() {
 
           {/* SERVICES */}
           <div>
-            <h3 className="text-sm font-semibold text-white">
-              Our Services
-            </h3>
+            <h3 className="text-sm font-semibold text-white">Our Services</h3>
 
             <ul className="mt-7 space-y-4">
               {services.map((service) => (
@@ -148,9 +140,7 @@ export default function Footer() {
 
           {/* COMPANY */}
           <div>
-            <h3 className="text-sm font-semibold text-white">
-              Company
-            </h3>
+            <h3 className="text-sm font-semibold text-white">Company</h3>
 
             <ul className="mt-7 space-y-4">
               {company.map((item) => (
@@ -168,12 +158,9 @@ export default function Footer() {
 
           {/* CONTACT */}
           <div>
-            <h3 className="text-sm font-semibold text-white">
-              Get in Touch
-            </h3>
+            <h3 className="text-sm font-semibold text-white">Get in Touch</h3>
 
             <div className="mt-7 space-y-6">
-
               <a
                 href="mailto:devcenter.in@gmail.com"
                 className="group flex items-start gap-3"
@@ -191,7 +178,10 @@ export default function Footer() {
                 href="https://wa.me/918972982503"
                 className="group flex items-start gap-3"
               >
-                <MessageCircle size={18} className="mt-0.5 shrink-0 text-primary-400" />
+                <MessageCircle
+                  size={18}
+                  className="mt-0.5 shrink-0 text-primary-400"
+                />
 
                 <div>
                   <p className="text-xs text-neutral-500">WhatsApp</p>
@@ -202,7 +192,10 @@ export default function Footer() {
               </a>
 
               <div className="flex items-start gap-3">
-                <MapPin size={18} className="mt-0.5 shrink-0 text-primary-400" />
+                <MapPin
+                  size={18}
+                  className="mt-0.5 shrink-0 text-primary-400"
+                />
 
                 <div>
                   <p className="text-xs text-neutral-500">Location</p>
@@ -228,9 +221,8 @@ export default function Footer() {
 
         {/* BOTTOM FOOTER */}
         <div className="mt-20 flex flex-col justify-between gap-6 border-t border-white/10 pt-8 sm:flex-row sm:items-center">
-
           <p className="text-xs text-neutral-500">
-            © {new Date().getFullYear()} Dev Center. All rights reserved.
+            © {year} Dev Center. All rights reserved.
           </p>
 
           <div className="flex flex-wrap gap-6">
@@ -257,10 +249,19 @@ export default function Footer() {
           </div>
 
           <p className="flex items-center gap-1.5 text-xs text-neutral-500">
-            Crafted with <Heart size={12} className="fill-primary-500 text-primary-500" /> by Dev Center
+            Crafted with{" "}
+            <Heart size={12} className="fill-primary-500 text-primary-500" /> by
+            Dev Center
           </p>
         </div>
       </div>
     </footer>
   );
+}
+
+async function getCurrentYear() {
+  "use cache";
+  cacheLife("max");
+
+  return new Date().getFullYear();
 }
