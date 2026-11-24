@@ -1,0 +1,114 @@
+
+@import "tailwindcss";
+
+:root {
+  /* Background */
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Primary - Yellow */
+  --primary: #ffc900;
+
+  /* Accent - Indigo */
+  --accent: #4f46e5;
+
+  /* Muted */
+  --muted: #737373;
+
+  /* Surface */
+  --surface: #f7f7f8;
+
+  /* Border */
+  --border: #e5e5e5;
+}
+
+@theme inline {
+  /* Background */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Primary shades */
+  --color-primary-50: #fffbea;
+  --color-primary-100: #fff3c4;
+  --color-primary-200: #ffe88a;
+  --color-primary-300: #ffdb4d;
+  --color-primary-400: #ffd21f;
+  --color-primary-500: #ffc900;
+  --color-primary-600: #e6b400;
+  --color-primary-700: #bf9200;
+  --color-primary-800: #997400;
+  --color-primary-900: #735700;
+  --color-primary-950: #4d3a00;
+
+  /* Accent shades */
+  --color-accent-50: #eef2ff;
+  --color-accent-100: #e0e7ff;
+  --color-accent-200: #c7d2fe;
+  --color-accent-300: #a5b4fc;
+  --color-accent-400: #818cf8;
+  --color-accent-500: #6366f1;
+  --color-accent-600: #4f46e5;
+  --color-accent-700: #4338ca;
+  --color-accent-800: #3730a3;
+  --color-accent-900: #312e81;
+  --color-accent-950: #1e1b4b;
+
+  /* Muted shades */
+  --color-muted-50: #fafafa;
+  --color-muted-100: #f5f5f5;
+  --color-muted-200: #e5e5e5;
+  --color-muted-300: #d4d4d4;
+  --color-muted-400: #a3a3a3;
+  --color-muted-500: #737373;
+  --color-muted-600: #525252;
+  --color-muted-700: #404040;
+  --color-muted-800: #262626;
+  --color-muted-900: #171717;
+  --color-muted-950: #0a0a0a;
+
+  /* Surface shades */
+  --color-surface-50: #ffffff;
+  --color-surface-100: #f7f7f8;
+  --color-surface-200: #eeeeef;
+  --color-surface-300: #e5e5e7;
+  --color-surface-400: #d4d4d8;
+  --color-surface-500: #a1a1aa;
+  --color-surface-600: #71717a;
+  --color-surface-700: #52525b;
+  --color-surface-800: #3f3f46;
+  --color-surface-900: #27272a;
+  --color-surface-950: #18181b;
+
+  /* Border shades */
+  --color-border-50: #fafafa;
+  --color-border-100: #f5f5f5;
+  --color-border-200: #e5e5e5;
+  --color-border-300: #d4d4d4;
+  --color-border-400: #a3a3a3;
+  --color-border-500: #737373;
+  --color-border-600: #525252;
+  --color-border-700: #404040;
+  --color-border-800: #262626;
+  --color-border-900: #171717;
+  --color-border-950: #0a0a0a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+::selection {
+  background: #FFC900;
+  color: black;
+}
+

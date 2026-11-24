@@ -1,0 +1,88 @@
+
+import {
+  SiNextdotjs,
+  SiReact,
+  SiTypescript,
+  SiJavascript,
+  SiTailwindcss,
+  SiHtml5,
+  SiCss,
+  SiNodedotjs,
+  SiExpress,
+  SiMongodb,
+  SiMysql,
+  SiPython,
+  SiPostgresql,
+  SiAppwrite,
+  SiFirebase,
+  SiDocker,
+  Si1Password,
+  SiVercel,
+  SiCloudinary,
+  SiOpenid,
+  SiAnthropic,
+  SiGit,
+  SiGithub,
+  SiFigma,
+  SiExpo,
+} from "react-icons/si";
+
+export const technologies = [
+  {
+    category: "Frontend Development",
+    description: "Modern, responsive and high-performance interfaces.",
+    items: [
+      { name: "React", icon: SiReact },
+      { name: "Next.js", icon: SiNextdotjs },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Tailwind CSS", icon: SiTailwindcss },
+      { name: "HTML5", icon: SiHtml5 },
+      { name: "CSS3", icon: SiCss },
+    ],
+  },
+  {
+    category: "Backend & Database",
+    description: "Reliable server-side architecture and data management.",
+    items: [
+      { name: "Node.js", icon: SiNodedotjs },
+      { name: "Express.js", icon: SiExpress },
+      { name: "MongoDB", icon: SiMongodb },
+      { name: "MySQL", icon: SiMysql },
+      { name: "PostgreSQL", icon: SiPostgresql },
+      { name: "Python", icon: SiPython },
+      { name: "Appwrite", icon: SiAppwrite },
+    ],
+  },
+  {
+    category: "Mobile Development",
+    description: "Cross-platform mobile applications.",
+    items: [
+      { name: "React Native", icon: SiReact },
+      { name: "Expo", icon: SiExpo },
+      { name: "TypeScript", icon: SiTypescript },
+      { name: "Firebase", icon: SiFirebase },
+    ],
+  },
+  {
+    category: "AI & Cloud",
+    description: "Intelligent applications and modern infrastructure.",
+    items: [
+      { name: "OpenAI", icon: SiOpenid },
+      { name: "Anthropic", icon: SiAnthropic },
+      { name: "AWS", icon: Si1Password },
+      { name: "Docker", icon: SiDocker },
+      { name: "Vercel", icon: SiVercel },
+      { name: "Cloudinary", icon: SiCloudinary },
+    ],
+  },
+  {
+    category: "Tools & Design",
+    description: "Tools that support efficient development and collaboration.",
+    items: [
+      { name: "Git", icon: SiGit },
+      { name: "GitHub", icon: SiGithub },
+      { name: "Figma", icon: SiFigma },
+    ],
+  },
+];
